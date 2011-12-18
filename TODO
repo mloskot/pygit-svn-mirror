@@ -1,0 +1,4 @@
+* crap, it seems that update with multiple workbench paths doesn't work... that's what you get for not adding tests for this use case.
+** pygit-svn-mirror does not allow multiple workbench paths
+* error checking and reporting
+* optimize by not trying to push if there were no updates
