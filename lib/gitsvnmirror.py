@@ -23,6 +23,7 @@ class GitSVNMirror(object):
         self.__workbench = None
         self.__authors_file = None
         self.__silent = None
+        self.__is_sh_shell = self.is_sh_as_shell()
 
     @staticmethod
     def run(argv):
@@ -218,14 +219,14 @@ class GitSVNMirror(object):
             assert os.environ["GIT_DIR"] == self.workbench       
             if os.getcwd() == self.workbench and len(command) > 0:
                 if capture is True:
-                    output = subprocess.check_output(command, shell=True) #, stderr=subprocess.STDOUT
+                    output = subprocess.check_output(command, shell=self.__is_sh_shell)
                 else:
                     if self.__silent:
                         osdevnull = open(os.devnull, 'w')
-                        subprocess.check_call(command, shell=True, stdout=osdevnull)
+                        subprocess.check_call(command, shell=self.__is_sh_shell, stdout=osdevnull)
                         osdevnull.close()
                     else:
-                        subprocess.check_call(command, shell=True)
+                        subprocess.check_call(command, shell=self.__is_sh_shell)
                     output = "" # success
         except subprocess.CalledProcessError as e:
             sys.stderr.write("Command '%s' failed with returncode %d and output '%s'"% (" ".join(command), e.returncode, e.output))
@@ -233,3 +234,10 @@ class GitSVNMirror(object):
         else:
             assert output is not None
             return output
+            
+    def is_sh_as_shell(self):
+        # Controls if shell=True is set for subprocess calls
+        # See the can of worms of incompatibility: http://bugs.python.org/issue13195
+        import platform
+        plat = platform.system()
+        return plat == "Windows"
