@@ -70,35 +70,47 @@ command from the ‘workbench’ repo:
 
 	$ pygit-svn-mirror update
 
-Or by specifying the path(s) to one or more ‘workbench’ repos:
+Or by specifying the path to ‘workbench’ repos:
 
-	$ pygit-svn-mirror update /path/to/workbench1 /path/to/workbench2
+	$ pygit-svn-mirror update -w /path/to/workbench1
 
 You will probably normally not want to perform this step by hand. You can solve
 this by adding this command as a cron job, in which case you can silence the
 tool with the <tt>--silent</tt> option.
 
-‘init’ help banner
-----------------
-
-	Usage: pygit-svn-mirror init [mandatory options] [options]
-	
-	  Mandatory options are --from and --to.
-	
-	    --from URI                   The location of the SVN repository that is to be mirrored.
-	    --to URI                     The location of the GIT repository that is the mirror.
-	    --workbench PATH             The location of the workbench repository. Defaults to the current work dir.
-	    --authors-file PATH          An optional authors file used to migrate SVN usernames to GIT's format.
-	-s, --silent                     Silent mode.
-
-‘update’ help banner
+‘init’ --help banner
 --------------------
 
-	Usage: pygit-svn-mirror update [options] [workbench1] ...
-	
-	  Defaults to the current work dir if none is given.
-	
-	-s, --silent                     Silent mode.
+    Usage: git-svn-mirror.py init [mandatory options] [options]
+
+    Mandatory options are --from and --to. Use --help to find details.
+
+    Options:
+      --version             show program's version number and exit
+      -h, --help            show this help message and exit
+      -s, --silent          Silent mode.
+      -f URI, --from=URI    The location of the SVN repository that is to be
+                            mirrored.
+      -t URI, --to=URI      The location of the Git repository that is the mirror.
+      -w PATH, --workbench=PATH
+                            The location of the workbench repository. Defaults to
+                            the current work dir.
+      -a PATH, --authors-file=PATH
+                            An optional authors file used to migrate SVN usernames
+                            to Git format.
+                        
+‘update’ --help banner
+----------------------
+
+    Usage: git-svn-mirror.py update [options]
+
+    Options:
+      --version             show program's version number and exit
+      -h, --help            show this help message and exit
+      -s, --silent          Silent mode.
+      -w PATH, --workbench=PATH
+                            The location of the workbench repository. Defaults to
+                            the current work dir.
 
 Contributing
 ------------
@@ -114,7 +126,7 @@ Once you've made your great commits:
 Credits
 -------
 
-Thanks to Eloy Duran for the original [git-svn-mirror][orig] written in Ruby
+Thanks to Eloy Duran for the original [git-svn-mirror][orig] written in Ruby.
 
 License In Three Lines (LITL)
 -----------------------------
