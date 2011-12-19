@@ -2,3 +2,4 @@
 ** pygit-svn-mirror does not allow multiple workbench paths
 * error checking and reporting
 * optimize by not trying to push if there were no updates
+* Add the tool to PIP

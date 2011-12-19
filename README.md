@@ -30,6 +30,12 @@ Use `git-svn.mirror.py --help` and the guide below to learn how to use it.
 NOTE: Below, I use `pygit-svn-mirror` command. This is placeholder for Shell
 script proxy which I'm going to add at some point.
 
+On Windows, you can copy `bin\pygit-svn-mirror.bat` script to location included
+in your PATH or you can add the `bin\` directory to PATH.
+Next, edit the script and update `PYGITSVN` variable with location to your
+local clone [pygit-svn-mirror][my] repository.
+This way, you can run the tool through `pygit-svn-mirror.bat` script.
+
 Configure the ‘workbench’
 -------------------------
 
