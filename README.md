@@ -7,7 +7,10 @@ repo, and keeping it up-to-date.
 This is direct Python port of [git-svn-mirror][orig] written in Ruby by Eloy Duran.
 The guide below is a direct copy of README.md authored by Eloy Duran.
 
-pygit-svn-mirror 1.0 is based on [git-svn-mirror][orig] SHA:alloy/git-svn-mirror/42f52463
+News
+----
+
+* mloskot/pygit-svn-mirror@8b50339f7b8950a2919b8ec8ab02a2d986bdf94b - first version of the Python port based on alloy/git-svn-mirror@42f52463ea0cc88bf892e39b48693855ff3dabc6
 
 Why
 ---
@@ -140,3 +143,5 @@ License In Three Lines (LITL)
 [is]: http://github.com/mloskot/pygit-svn-mirror/issues
 [my]: http://github.com/mloskot/pygit-svn-mirror/
 [orig]: http://github.com/alloy/git-svn-mirror/
+[v0.1-orig-sha]: https://github.com/alloy/git-svn-mirror/commit/42f52463
+
