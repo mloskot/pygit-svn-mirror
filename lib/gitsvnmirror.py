@@ -193,7 +193,7 @@ class GitSVNMirror(object):
             assert p is not None
             return p.strip()
         def fset(self, value):
-            self.__authors_file = os.path.abspath(path)
+            self.__authors_file = os.path.abspath(value)
         def fdel(self):
             del self.__workbench
         return locals()
