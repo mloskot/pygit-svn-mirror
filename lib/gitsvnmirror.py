@@ -123,7 +123,7 @@ class GitSVNMirror(object):
         self.log("The mirror workbench has been configured. To push to the remote Git repo,",
             "and possibly as a cron job, run the following command:",
             "",
-            "  git-svn-mirror update -w '%s'" % self.workbench)
+            "  pygit-svn-mirror update -w '%s'" % self.workbench)
 
     def update(self):
         self.fetch()
