@@ -4,7 +4,7 @@
 # This file is part of pygit-svn-mirror tool -
 # Python port of git-svn-mirror written in Ruby by Eloy Duran.
 #
-# Copyright (c) 2011 Mateusz Loskot <mateusz@loskot.net>
+# Copyright (c) 2011-2013 Mateusz Loskot <mateusz@loskot.net>
 # Copyright (c) 2010 Eloy Duran <eloy.de.enige@gmail.com> (author of git-svn-mirror in Ruby)
 #
 # You may use these works without restrictions, as long as this paragraph is included.
